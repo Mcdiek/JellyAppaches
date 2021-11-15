@@ -10,4 +10,18 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:text="Salto del Tequendama"
+        android:gravity="center"
+        />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="242dp"
+        android:rotationY="0"
+        android:src="@android:drawable/gallery_thumb" />
 </LinearLayout>
