@@ -30,26 +30,25 @@
         android:layout_margin="10dp"
         >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/imageCity1"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp"
-            android:src="@drawable/bogota"
-            />
+            <ImageView
+                android:id="@+id/imageCity1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/bogota"
+                />
 
-
-        <TextView
-            android:id="@+id/textCity1"
-            android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:gravity="center"
-            android:text="@string/app_city_1" />
+            <TextView
+                android:id="@+id/textCity1"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:gravity="center"
+                android:text="@string/app_city_1" />
 
         </LinearLayout>
 
@@ -65,28 +64,82 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/imageCity2"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp"
-            android:src="@drawable/cali"
-            />
+            <ImageView
+                android:id="@+id/imageCity2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/cali"
+                />
 
-    <TextView
-        android:id="@+id/textCity2"
-        android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:gravity="center"
-        android:text="@string/app_city_2"
-        />
+            <TextView
+                android:id="@+id/textCity2"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:gravity="center"
+                android:text="@string/app_city_2"
+                />
 
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
+            <ImageView
+                android:id="@+id/imageCity3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/medellin"
+                />
 
+            <TextView
+                android:id="@+id/textCity3"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:gravity="center"
+                android:text="@string/app_city_3"
+                />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageCity4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/pasto"
+                />
+
+            <TextView
+                android:id="@+id/textCity4"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:gravity="center"
+                android:text="@string/app_city_4"
+                />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
 
 
 

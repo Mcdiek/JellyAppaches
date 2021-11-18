@@ -2,5 +2,6 @@
     <string name="app_name">JellyApp</string>
     <string name="app_city_1">Bogota</string>
     <string name="app_city_2">Cali</string>
-    <string name="app_city_3">Pasto</string>
+    <string name="app_city_3">Medellin</string>
+    <string name="app_city_4">Pasto</string>
 </resources>
