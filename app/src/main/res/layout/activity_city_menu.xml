@@ -21,13 +21,15 @@
         android:textColor="@color/purple_700"
         android:textSize="@dimen/title_text_size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/contact_list"
+        app:layout_constraintEnd_toEndOf="@+id/city_list"
         app:layout_constraintTop_toTopOf="parent"
         />
 
 
+
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/contact_list"
+        android:id="@+id/city_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_normal"
