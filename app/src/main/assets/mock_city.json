@@ -2,19 +2,26 @@
   {
     "cityName": "Bogota",
     "depName": "Cundinamarca",
-    "temperature": "17",
-    "imageUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png"
+    "temperature": "17°",
+    "imageUrl": "https://i.imgur.com/fh6kUyW.jpg"
   },
   {
-    "cityName": "Bogota",
-    "depName": "Cundinamarca",
-    "temperature": "17",
-    "imageUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png"
+    "cityName": "Cali",
+    "depName": "Valle del cauca",
+    "temperature": "25",
+    "imageUrl": "https://i.imgur.com/NGuqr5w.jpg"
   },
   {
-    "cityName": "Bogota",
-    "depName": "Cundinamarca",
+    "cityName": "Pasto",
+    "depName": "Nariño",
     "temperature": "17",
-    "imageUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png"
+    "imageUrl": "https://i.imgur.com/2Imp8NM.jpg"
+  },
+  {
+    "cityName": "Medellin",
+    "depName": "Antioquia",
+    "temperature": "20",
+    "imageUrl": "https://i.imgur.com/5J1spUg.jpg"
   }
+
 ]

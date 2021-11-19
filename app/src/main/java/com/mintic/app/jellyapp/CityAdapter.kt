@@ -51,9 +51,8 @@ class CityAdapter (
 
             /* Bind Contact name and image. */
             fun bind(city: City) {
+
                 currentCity = city
-
-
                 nameLabel.text = city.cityName
 
 
