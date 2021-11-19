@@ -1,6 +1,6 @@
 package com.mintic.app.jellyapp
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
@@ -11,7 +11,14 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.city_spots)
 
-        val message = intent.getStringArrayExtra(CITY_MESSAGE)
+        val message = intent.getStringExtra(CITY_MESSAGE)
+
+
+        val textView = findViewById<TextView>(R.id.textView).apply {
+            text = message
+        }
+
+
 
 
 

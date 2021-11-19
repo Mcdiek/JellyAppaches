@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
 
 
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -13,139 +13,33 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/title_view"
         android:layout_width="match_parent"
         android:layout_height="111dp"
         android:gravity="center"
-        android:text="@string/app_name" />
+        android:text="@string/app_name"
+        android:textColor="@color/purple_700"
+        android:textSize="@dimen/title_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/contact_list"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-</ScrollView>
 
-    <android.support.v7.widget.CardView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/contact_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:clickable="true"
-        android:foreground="?attr/selectableItemBackground"
-        android:onClick="sendMessage"
-        >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageCity1"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_margin="10dp"
-                android:src="@drawable/bogota"
-                />
-
-            <TextView
-                android:id="@+id/textCity1"
-                android:layout_width="match_parent"
-                android:layout_height="110dp"
-                android:gravity="center"
-                android:text="@string/app_city_1" />
-
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageCity2"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_margin="10dp"
-                android:src="@drawable/cali"
-                />
-
-            <TextView
-                android:id="@+id/textCity2"
-                android:layout_width="match_parent"
-                android:layout_height="110dp"
-                android:gravity="center"
-                android:text="@string/app_city_2"
-                />
-
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageCity3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_margin="10dp"
-                android:src="@drawable/medellin"
-                />
-
-            <TextView
-                android:id="@+id/textCity3"
-                android:layout_width="match_parent"
-                android:layout_height="110dp"
-                android:gravity="center"
-                android:text="@string/app_city_3"
-                />
-
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageCity4"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_margin="10dp"
-                android:src="@drawable/pasto"
-                />
-
-            <TextView
-                android:id="@+id/textCity4"
-                android:layout_width="match_parent"
-                android:layout_height="110dp"
-                android:gravity="center"
-                android:text="@string/app_city_4"
-                />
-
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
+        android:layout_marginTop="@dimen/margin_normal"
+        app:layoutManager="LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_view"
+        />
 
 
 
 
-</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 

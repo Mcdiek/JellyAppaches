@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="thumbnail_size">100dp</dimen>
+    <dimen name="title_text_size">25sp</dimen>
+</resources>
