@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -39,6 +40,8 @@ class CityAdapter (
         {
             private var nameLabel: TextView = itemView.findViewById(R.id.text_city)
             private var imageView: ImageView = itemView.findViewById(R.id.image_city)
+            private var ratCityBar: RatingBar = itemView.findViewById(R.id.ratcityBar)
+            private var descriptionShort: TextView = itemView.findViewById(R.id.descriptionShort)
             private var currentCity: City? = null
 
             init {
@@ -54,6 +57,8 @@ class CityAdapter (
 
                 currentCity = city
                 nameLabel.text = city.cityName
+                ratCityBar.rating = city.ratCityValue.toFloat()
+                descriptionShort.text = city.cityDescription
 
 
                 Glide.with(context)

@@ -56,9 +56,9 @@ class MainActivity : AppCompatActivity() {
             putExtra(CITY_DESCRIPTION,city.cityDescription)
             putExtra(CITY_IMAGE,city.imageUrl)
             putExtra(CITY_LOCATION,city.depName)
+            putExtra(CITY_RATING,city.ratCityValue)
         }
         startActivity(intent)
-
     }
 
     private fun generateCitys() {
@@ -72,7 +72,8 @@ class MainActivity : AppCompatActivity() {
                     cityJson.getString("depName"),
                     cityJson.getString("temperature"),
                     cityJson.getString("imageUrl"),
-                    cityJson.getString("cityDescription")
+                    cityJson.getString("cityDescription"),
+                    cityJson.getString("ratCityValue")
                 )
                 Log.d(TAG, "generateContacts: $city")
                 mCity.add(city)
@@ -119,6 +120,7 @@ class MainActivity : AppCompatActivity() {
         const val CITY_DESCRIPTION = "com.mintic.app.jellyapp.DESCRIPTION"
         const val CITY_IMAGE = "com.mintic.app.jellyapp.IMAGE"
         const val CITY_LOCATION = "com.mintic.app.jellyapp.LOCATION"
+        const val CITY_RATING = "com.mintic.app.jellyapp.RATING"
         private val TAG = MainActivity::class.java.simpleName
     }
 

@@ -5,5 +5,6 @@ data class City (
         val depName: String,
         var temperature: String?,
         var imageUrl: String,
-        var cityDescription: String
+        var cityDescription: String,
+        var ratCityValue: String
 )

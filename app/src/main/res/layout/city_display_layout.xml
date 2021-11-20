@@ -28,8 +28,8 @@
         android:id="@+id/text_city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
         android:gravity="center"
-        android:layout_marginStart="@dimen/margin_normal"
         android:text="@string/name_city"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="?android:attr/textColorPrimary"
@@ -38,7 +38,32 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
+    <TextView
+        android:id="@+id/descriptionShort"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:layout_marginStart="12dp"
+        android:text="@string/description_city"
+        app:layout_constraintTop_toBottomOf="@id/text_city"
+        app:layout_constraintStart_toEndOf="@id/image_city"
+        android:textColor="@color/teal_700"
+        android:textSize="12sp"
+        />
 
+    <RatingBar
+        android:id="@+id/ratcityBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:scaleX="1"
+        android:scaleY="1"
+        android:layout_margin="@dimen/margin_normal"
+        style="?android:attr/ratingBarStyleSmall"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
