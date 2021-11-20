@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">JellyApp</string>
+    <string name="name_city">Ciudad</string>
+    <string name="location_city">Ubicación</string>
+    <string name="temperature_city">Temperatura</string>
+    <string name="description_city">Descripción</string>
+    <string name="contact_thumb">Contact Thubmnail Picture</string>
+    <string name="location_show">Ubicación:</string>
+    <string name="description_show">Descripción:</string>
+    <string name="temp_show">Temperatura:</string>
 </resources>

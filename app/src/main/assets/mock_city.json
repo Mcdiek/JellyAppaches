@@ -1,0 +1,36 @@
+[
+  {
+    "cityName": "Bogota",
+    "depName": "Cundinamarca",
+    "temperature": "17°",
+    "imageUrl": "https://i.imgur.com/fh6kUyW.jpg",
+    "cityDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum mollis odio et commodo. Sed feugiat et ligula vel rutrum. Nulla vehicula ornare nunc vel posuere. In eget congue nibh. Nullam et tortor nibh. Fusce et ante lectus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nInterdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed massa a sem ultricies ullamcorper ac ut nisl. Aenean consectetur sit amet ex vitae commodo. Ut a ex malesuada massa efficitur blandit. Pellentesque tincidunt nibh nec nisl fringilla hendrerit eu vel elit. Nulla eget nisi nunc. Nunc venenatis mauris orci, eu euismod est faucibus sed. Phasellus sem ex, semper iaculis pretium quis, lacinia sed erat. Proin vitae malesuada velit, posuere rhoncus augue.",
+    "ratCityValue": "5"
+  },
+  {
+    "cityName": "Cali",
+    "depName": "Valle del cauca",
+    "temperature": "25°",
+    "imageUrl": "https://i.imgur.com/NGuqr5w.jpg",
+    "cityDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum mollis odio et commodo. Sed feugiat et ligula vel rutrum. Nulla vehicula ornare nunc vel posuere. In eget congue nibh. Nullam et tortor nibh. Fusce et ante lectus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nInterdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed massa a sem ultricies ullamcorper ac ut nisl. Aenean consectetur sit amet ex vitae commodo. Ut a ex malesuada massa efficitur blandit. Pellentesque tincidunt nibh nec nisl fringilla hendrerit eu vel elit. Nulla eget nisi nunc. Nunc venenatis mauris orci, eu euismod est faucibus sed. Phasellus sem ex, semper iaculis pretium quis, lacinia sed erat. Proin vitae malesuada velit, posuere rhoncus augue.",
+    "ratCityValue": "3"
+  },
+  {
+    "cityName": "Pasto",
+    "depName": "Nariño",
+    "temperature": "17°",
+    "imageUrl": "https://i.imgur.com/2Imp8NM.jpg",
+    "cityDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum mollis odio et commodo. Sed feugiat et ligula vel rutrum. Nulla vehicula ornare nunc vel posuere. In eget congue nibh. Nullam et tortor nibh. Fusce et ante lectus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nInterdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed massa a sem ultricies ullamcorper ac ut nisl. Aenean consectetur sit amet ex vitae commodo. Ut a ex malesuada massa efficitur blandit. Pellentesque tincidunt nibh nec nisl fringilla hendrerit eu vel elit. Nulla eget nisi nunc. Nunc venenatis mauris orci, eu euismod est faucibus sed. Phasellus sem ex, semper iaculis pretium quis, lacinia sed erat. Proin vitae malesuada velit, posuere rhoncus augue.",
+    "ratCityValue": "2.5"
+  },
+  {
+    "cityName": "Medellin",
+    "depName": "Antioquia",
+    "temperature": "20°",
+    "imageUrl": "https://i.imgur.com/5J1spUg.jpg",
+    "cityDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum mollis odio et commodo. Sed feugiat et ligula vel rutrum. Nulla vehicula ornare nunc vel posuere. In eget congue nibh. Nullam et tortor nibh. Fusce et ante lectus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nInterdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum sed massa a sem ultricies ullamcorper ac ut nisl. Aenean consectetur sit amet ex vitae commodo. Ut a ex malesuada massa efficitur blandit. Pellentesque tincidunt nibh nec nisl fringilla hendrerit eu vel elit. Nulla eget nisi nunc. Nunc venenatis mauris orci, eu euismod est faucibus sed. Phasellus sem ex, semper iaculis pretium quis, lacinia sed erat. Proin vitae malesuada velit, posuere rhoncus augue.",
+    "ratCityValue": "4"
+  }
+
+
+]
