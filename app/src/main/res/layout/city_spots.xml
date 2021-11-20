@@ -49,7 +49,7 @@
         android:text="@string/temp_show"
         android:textColor="@color/purple_700"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar2"
         tools:layout_editor_absoluteX="10dp"
         tools:ignore="MissingConstraints" />
 
@@ -61,7 +61,7 @@
         android:text="@string/temperature_city"
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/Temperatura"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar2" />
 
     <TextView
         android:id="@+id/Ubicacion"
@@ -121,6 +121,16 @@
         tools:layout_editor_absoluteX="10dp"
         />
 
+    <RatingBar
+        android:id="@+id/ratingBar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX=".5"
+        android:scaleY=".5"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
