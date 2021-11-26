@@ -18,7 +18,7 @@ private lateinit var recycler: RecyclerView
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_city_menu)
+        setContentView(R.layout.main_activity)
 
         recycler = findViewById(R.id.city_list)
         setupRecyclerView()
