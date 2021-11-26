@@ -8,4 +8,6 @@
     <string name="location_show">Ubicación:</string>
     <string name="description_show">Descripción:</string>
     <string name="temp_show">Temperatura:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

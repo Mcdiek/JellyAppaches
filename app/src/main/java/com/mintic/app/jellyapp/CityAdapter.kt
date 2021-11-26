@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import java.util.ArrayList
 
-class CityAdapter (
+class CityAdapter(
     private val mCity: ArrayList<City>,
     private val context: Context,
     private val onClick: (City) -> Unit

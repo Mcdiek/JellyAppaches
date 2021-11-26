@@ -1,34 +1,39 @@
 package com.mintic.app.jellyapp
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.mintic.app.jellyapp.MainActivity.Companion.CITY_NAME
-import com.mintic.app.jellyapp.MainActivity.Companion.CITY_TEMP
-import com.mintic.app.jellyapp.MainActivity.Companion.CITY_DESCRIPTION
-import com.mintic.app.jellyapp.MainActivity.Companion.CITY_IMAGE
-import com.mintic.app.jellyapp.MainActivity.Companion.CITY_LOCATION
-import com.mintic.app.jellyapp.MainActivity.Companion.CITY_RATING
+//import com.mintic.app.jellyapp.MainActivity.Companion.CITY_NAME
+//import com.mintic.app.jellyapp.MainActivity.Companion.CITY_TEMP
+//import com.mintic.app.jellyapp.MainActivity.Companion.CITY_DESCRIPTION
+//import com.mintic.app.jellyapp.MainActivity.Companion.CITY_IMAGE
+//import com.mintic.app.jellyapp.MainActivity.Companion.CITY_LOCATION
+//import com.mintic.app.jellyapp.MainActivity.Companion.CITY_RATING
 
 
 class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.city_spots)
+        setContentView(R.layout.frame_city_details)
 
 
 
-        val cityName = intent.getStringExtra(CITY_NAME)
-        val cityTemp = intent.getStringExtra(CITY_TEMP)
-        val cityDescription = intent.getStringExtra(CITY_DESCRIPTION)
-        val cityLocation = intent.getStringExtra(CITY_LOCATION)
-        val cityImageUrl = intent.getStringExtra(CITY_IMAGE)
-        val cityRating = intent.getStringExtra(CITY_RATING)
+//        val cityName = intent.getStringExtra(CITY_NAME)
+//        val cityTemp = intent.getStringExtra(CITY_TEMP)
+//        val cityDescription = intent.getStringExtra(CITY_DESCRIPTION)
+//        val cityLocation = intent.getStringExtra(CITY_LOCATION)
+//        val cityImageUrl = intent.getStringExtra(CITY_IMAGE)
+//        val cityRating = intent.getStringExtra(CITY_RATING)
+
+        val cityName = "intent.getStringExtra(CITY_NAME)"
+        val cityTemp = "intent.getStringExtra(CITY_TEMP)"
+        val cityDescription = "intent.getStringExtra(CITY_DESCRIPTION)"
+        val cityLocation = "intent.getStringExtra(CITY_LOCATION)"
+        val cityImageUrl = "intent.getStringExtra(CITY_IMAGE)"
+        val cityRating = "intent.getStringExtra(CITY_RATING)"
 
 
         val textViewTitle = findViewById<TextView>(R.id.cityName).apply {
