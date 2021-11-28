@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentCityList">
+    tools:context=".CityListFragment">
 
 
     <LinearLayout
@@ -20,8 +20,8 @@
             android:layout_height="100dp"
             android:layout_margin="@dimen/margin_normal"
             android:src="@drawable/ic_logo_mintic_android_prin"
+            android:contentDescription="@string/name_city"
             />
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/city_list"
