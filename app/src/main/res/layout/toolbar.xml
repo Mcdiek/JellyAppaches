@@ -1,17 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/barratool"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/purple_500"
+    android:background="@color/tool_bar"
     >
 
+
+
     <ImageView
+        android:id="@+id/logo_image"
         android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:src="@drawable/ic_textologo"
         android:adjustViewBounds="true"
         />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:outlineAmbientShadowColor="@color/fill_logo"
+        android:background="@color/fill_logo"
+        app:layout_constraintGuide_begin="100dp"
+        android:orientation="vertical"
+        />
+
 
 
 

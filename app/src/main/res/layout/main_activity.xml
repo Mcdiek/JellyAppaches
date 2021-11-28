@@ -11,14 +11,10 @@
     tools:context=".MainActivity"
     android:scrollbars="vertical"
     android:fadeScrollbars="true">
-
-
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
         />
-
-
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
         android:name="androidx.navigation.fragment.NavHostFragment"

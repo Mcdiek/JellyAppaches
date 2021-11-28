@@ -19,4 +19,8 @@
         <item name="cornerFamily">cut</item>
     </style>
 
+    <style name="no_title" parent="@style/Theme.AppCompat.Light.NoActionBar">
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+    </style>
 </resources>

@@ -5,10 +5,8 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -29,13 +27,6 @@ class CityListFragment : Fragment() {
     private lateinit var contexto: Context
 
 
-
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        //Log.d(TAG, "onCreate")
-    }
 
 
     override fun onCreateView(
@@ -90,7 +81,10 @@ class CityListFragment : Fragment() {
         val action = CityListFragmentDirections.navigateToCityDetails(city.cityName,city.cityDescription,city.temperature,city.imageUrl,city.depName,city.ratCityValue.toFloat())
        Navigation.findNavController((view)).navigate(action)
 
+
     }
+
+
 
     @SuppressLint("NotifyDataSetChanged")
     private fun generateCitys() {
@@ -116,6 +110,8 @@ class CityListFragment : Fragment() {
             e.printStackTrace()
         }
     }
+
+
 
     fun readCityJsonFile(): String? {
 
