@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentCityList">
+    <fragment
+        android:id="@+id/fragmentCityList"
+        android:name="com.mintic.app.jellyapp.CityListFragment"
+        android:label="fragment_city_list"
+        tools:layout="@layout/city_list_fragment" >
+        <action
+            android:id="@+id/navigateToCityDetails"
+            app:destination="@id/cityDescriptionFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:popEnterAnim="@android:anim/slide_in_left" />
+        <action
+            android:id="@+id/action_fragmentCityList_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cityDescriptionFragment"
+        android:name="com.mintic.app.jellyapp.CityDescriptionFragment"
+        android:label="CityDescriptionFragment" >
+        <argument
+            android:name="cityName"
+            app:argType="string"
+            android:defaultValue="Nombre ciudad" />
+        <action
+            android:id="@+id/navigateToCityList"
+            app:destination="@id/fragmentCityList" />
+        <argument
+            android:name="cityDescription"
+            app:argType="string"
+            android:defaultValue="Descripción de la ciudad" />
+        <argument
+            android:name="temperature"
+            app:argType="string" />
+        <argument
+            android:name="imgUrl"
+            app:argType="string"
+            android:defaultValue="Image" />
+        <argument
+            android:name="cityLocation"
+            app:argType="string"
+            android:defaultValue="Colombia" />
+        <argument
+            android:name="ratingValue"
+            app:argType="float"
+            android:defaultValue="1" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.mintic.app.jellyapp.SettingsFragment"
+        android:label="SettingsFragment" />
+</navigation>
