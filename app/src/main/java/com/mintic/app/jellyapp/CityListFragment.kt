@@ -79,7 +79,7 @@ class CityListFragment : Fragment() {
 //      Log.d(TAG, "click on ${city.cityName}")
 
         val action = CityListFragmentDirections.navigateToCityDetails(city.cityName,city.cityDescription,city.temperature,city.imageUrl,city.depName,city.ratCityValue.toFloat())
-       Navigation.findNavController((view)).navigate(action)
+        Navigation.findNavController((view)).navigate(action)
 
 
     }
