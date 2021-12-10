@@ -10,5 +10,7 @@ data class City (
         var temperature: String,
         var imageUrl: String,
         var cityDescription: String,
-        var ratCityValue: String
+        var ratCityValue: String,
+        var geoLat: String,
+        var geoLon: String,
 )

@@ -48,6 +48,14 @@
             android:name="ratingValue"
             app:argType="float"
             android:defaultValue="1" />
+        <argument
+            android:name="geoLat"
+            app:argType="string"
+            android:defaultValue="0" />
+        <argument
+            android:name="geoLon"
+            app:argType="string"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
