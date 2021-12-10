@@ -7,6 +7,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentResultOwner
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,27 +22,36 @@ import java.util.ArrayList
 
 
 class CityListFragment : Fragment() {
+    
+    private lateinit var viewModel: ListViewModel
 
 //    private var listener: OnCityListButtonListener? = null
     private lateinit var cityAdapter : CityAdapter
     private var mCity: ArrayList<City> = ArrayList()
     private lateinit var recycler: RecyclerView
     private lateinit var contexto: Context
-
-
-
+    private lateinit var ciudadLista: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View? {        
 
+        viewModel = ViewModelProvider(this).get(ListViewModel::class.java)
+        observeLiveData()
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.city_list_fragment, container, false)
 
         recycler = view.findViewById(R.id.city_list)
         initRecyclerView(view)
         return  view
+    }
+
+    private fun observeLiveData() {
+        return viewModel.getCitys().observe(viewLifecycleOwner,{
+            Log.d("CITYLISTA",it.toString())
+            ciudadLista = it.toString()
+        })
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -81,14 +93,12 @@ class CityListFragment : Fragment() {
         val action = CityListFragmentDirections.navigateToCityDetails(city.cityName,city.cityDescription,city.temperature,city.imageUrl,city.depName,city.ratCityValue.toFloat())
         Navigation.findNavController((view)).navigate(action)
 
-
     }
-
-
 
     @SuppressLint("NotifyDataSetChanged")
     private fun generateCitys() {
-        val citysString = readCityJsonFile()
+     val citysString = readCityJsonFile()
+
         try {
             val citysJson = JSONArray(citysString)
             for (i in 0 until citysJson.length()) {
@@ -117,28 +127,30 @@ class CityListFragment : Fragment() {
 
         var contactsString: String? = null
         try {
-            val inputStream: InputStream = contexto.assets.open("mock_city.json")
-            val size = inputStream.available()
-            val buffer = ByteArray(size)
-            inputStream.read(buffer)
-            inputStream.close()
+        val inputStream: InputStream = contexto.assets.open("mock_city.json")
+        val size = inputStream.available()
+        val buffer = ByteArray(size)
+        inputStream.read(buffer)
+        inputStream.close()
 
-            contactsString = String(buffer)
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-
-        return contactsString
+        contactsString = String(buffer)
+    } catch (e: IOException) {
+        e.printStackTrace()
     }
 
-
-    companion object{
-
-            private const val TAG = "CityListFragment"
+    return contactsString
+}
 
 
 
-    }
+
+companion object{
+
+    private const val TAG = "CityListFragment"
+
+
+
+}
 
 
 }

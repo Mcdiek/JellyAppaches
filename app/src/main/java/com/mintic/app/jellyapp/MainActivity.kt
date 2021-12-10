@@ -2,9 +2,12 @@ package com.mintic.app.jellyapp
 
 
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.*
+import androidx.appcompat.app.AppCompatActivity
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 
 
 
@@ -38,7 +41,6 @@ class MainActivity : AppCompatActivity() {
                 val fragment = SettingsFragment()
                 supportFragmentManager.beginTransaction().apply{
                     replace(R.id.fragmentContainerView,fragment)
-
                     commit()
                 }
                 true
@@ -46,6 +48,8 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+
 
 
 
