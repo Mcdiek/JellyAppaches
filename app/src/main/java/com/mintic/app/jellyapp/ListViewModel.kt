@@ -10,10 +10,13 @@ class ListViewModel : ViewModel() {
 
     private var apiService = RetrofitFactory.apiService()
     private var cityList = MutableLiveData<List<City>>()
+    private var isFailure = MutableLiveData(false)
 
     init{
         requestCityFromService()
     }
+
+    fun getIsFailure(): LiveData<Boolean> = isFailure
 
     fun getCitys(): LiveData<List<City>> = cityList
 

@@ -56,7 +56,7 @@ class CityListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        generateCitys()
+//        generateCitys()
 
     }
 
@@ -80,66 +80,82 @@ class CityListFragment : Fragment() {
         )
         recycler.layoutManager = LinearLayoutManager(activity)
 
-        cityAdapter = CityAdapter(mCity, contexto)
-        {
-            city ->   cityOnClick(city,view)
-        }
-        recycler.adapter = cityAdapter
+        viewModel = ViewModelProvider(this).get(ListViewModel::class.java)
+        viewModel.getCitys().observe(viewLifecycleOwner, {
+            cityAdapter = CityAdapter(it, contexto){
+                    city ->   cityOnClick(city,view)
+            }
+            recycler.adapter = cityAdapter
+        })
+        viewModel.getIsFailure().observe(viewLifecycleOwner, {
+            if (it) {
+                Log.d(TAG, "Request failed")
+            }
+        })
+
     }
 
     private fun cityOnClick(city: City,view: View){
 //      Log.d(TAG, "click on ${city.cityName}")
-
-        val action = CityListFragmentDirections.navigateToCityDetails(city.cityName,city.cityDescription,city.temperature,city.imageUrl,city.depName,city.ratCityValue.toFloat())
+        val action = CityListFragmentDirections
+                    .navigateToCityDetails(city.cityName,
+                                    city.cityDescription,
+                                    city.temperature,
+                                    city.imageUrl,
+                                    city.depName,
+                                    city.ratCityValue.toFloat())
         Navigation.findNavController((view)).navigate(action)
-
     }
 
-    @SuppressLint("NotifyDataSetChanged")
-    private fun generateCitys() {
-     val citysString = readCityJsonFile()
+//    @SuppressLint("NotifyDataSetChanged")
+//    private fun generateCitys() {
+//     val citysString = readCityJsonFile()
+//        val citysString = viewModel.getCitys().value
+//
+//
+//
+//
+//        try {
+//            val citysJson = JSONArray(citysString)
+//            for (i in 0 until citysJson.length()) {
+//                val cityJson = citysJson.getJSONObject(i)
+//                val city = City(
+//                    cityJson.getString("cityName"),
+//                    cityJson.getString("depName"),
+//                    cityJson.getString("temperature"),
+//                    cityJson.getString("imageUrl"),
+//                    cityJson.getString("cityDescription"),
+//                    cityJson.getString("ratCityValue")
+//                )
+//                Log.d(TAG, "generateContacts: $city")
+//                mCity.add(city)
+//            }
+//
+//            cityAdapter.notifyDataSetChanged()
+//        } catch (e: JSONException) {
+//            e.printStackTrace()
+//        }
+//    }
 
-        try {
-            val citysJson = JSONArray(citysString)
-            for (i in 0 until citysJson.length()) {
-                val cityJson = citysJson.getJSONObject(i)
-                val city = City(
-                    cityJson.getString("cityName"),
-                    cityJson.getString("depName"),
-                    cityJson.getString("temperature"),
-                    cityJson.getString("imageUrl"),
-                    cityJson.getString("cityDescription"),
-                    cityJson.getString("ratCityValue")
-                )
-                Log.d(TAG, "generateContacts: $city")
-                mCity.add(city)
-            }
-
-            cityAdapter.notifyDataSetChanged()
-        } catch (e: JSONException) {
-            e.printStackTrace()
-        }
-    }
 
 
-
-    fun readCityJsonFile(): String? {
-
-        var contactsString: String? = null
-        try {
-        val inputStream: InputStream = contexto.assets.open("mock_city.json")
-        val size = inputStream.available()
-        val buffer = ByteArray(size)
-        inputStream.read(buffer)
-        inputStream.close()
-
-        contactsString = String(buffer)
-    } catch (e: IOException) {
-        e.printStackTrace()
-    }
-
-    return contactsString
-}
+//    fun readCityJsonFile(): String? {
+//
+//        var contactsString: String? = null
+//        try {
+//        val inputStream: InputStream = contexto.assets.open("mock_city.json")
+//        val size = inputStream.available()
+//        val buffer = ByteArray(size)
+//        inputStream.read(buffer)
+//        inputStream.close()
+//
+//        contactsString = String(buffer)
+//    } catch (e: IOException) {
+//        e.printStackTrace()
+//    }
+//
+//    return contactsString
+//}
 
 
 
