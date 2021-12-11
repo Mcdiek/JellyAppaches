@@ -7,6 +7,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentResultOwner
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,21 +22,22 @@ import java.util.ArrayList
 
 
 class CityListFragment : Fragment() {
+    
+    private lateinit var viewModel: ListViewModel
 
 //    private var listener: OnCityListButtonListener? = null
     private lateinit var cityAdapter : CityAdapter
-    private var mCity: ArrayList<City> = ArrayList()
     private lateinit var recycler: RecyclerView
     private lateinit var contexto: Context
-
-
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View? {        
 
+        viewModel = ViewModelProvider(this).get(ListViewModel::class.java)
+        observeLiveData()
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.city_list_fragment, container, false)
 
@@ -42,103 +46,69 @@ class CityListFragment : Fragment() {
         return  view
     }
 
+    private fun observeLiveData() {
+        return viewModel.getCitys().observe(viewLifecycleOwner,{
+            Log.d("CITYLISTA",it.toString())
+        })
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        generateCitys()
-
     }
 
     //    agregar contexto
     override fun onAttach(context: Context) {
         super.onAttach(context)
         this.contexto = context
-
     }
 
-
     private fun initRecyclerView(view: View){
-
-        mCity = arrayListOf()
 
         recycler.addItemDecoration(
             DividerItemDecoration(
                 contexto,
-                DividerItemDecoration.VERTICAL //vertical se refiera a la lista
+                DividerItemDecoration.VERTICAL
             )
         )
         recycler.layoutManager = LinearLayoutManager(activity)
 
-        cityAdapter = CityAdapter(mCity, contexto)
-        {
-            city ->   cityOnClick(city,view)
-        }
-        recycler.adapter = cityAdapter
+        viewModel = ViewModelProvider(this).get(ListViewModel::class.java)
+        viewModel.getCitys().observe(viewLifecycleOwner, {
+            cityAdapter = CityAdapter(it, contexto){
+                    city ->   cityOnClick(city,view)
+            }
+            recycler.adapter = cityAdapter
+        })
+        viewModel.getIsFailure().observe(viewLifecycleOwner, {
+            if (it) {
+                Log.d(TAG, "Request failed")
+            }
+        })
+
     }
 
     private fun cityOnClick(city: City,view: View){
-//      Log.d(TAG, "click on ${city.cityName}")
-
-        val action = CityListFragmentDirections.navigateToCityDetails(city.cityName,city.cityDescription,city.temperature,city.imageUrl,city.depName,city.ratCityValue.toFloat())
-       Navigation.findNavController((view)).navigate(action)
-
-
+        val action = CityListFragmentDirections
+                    .navigateToCityDetails(city.cityName,
+                                    city.cityDescription,
+                                    city.temperature,
+                                    city.imageUrl,
+                                    city.depName,
+                                    city.ratCityValue.toFloat(),
+                                    city.geoLat,
+                                    city.geoLon
+                                    )
+        Navigation.findNavController((view)).navigate(action)
     }
 
 
+companion object{
 
-    @SuppressLint("NotifyDataSetChanged")
-    private fun generateCitys() {
-        val citysString = readCityJsonFile()
-        try {
-            val citysJson = JSONArray(citysString)
-            for (i in 0 until citysJson.length()) {
-                val cityJson = citysJson.getJSONObject(i)
-                val city = City(
-                    cityJson.getString("cityName"),
-                    cityJson.getString("depName"),
-                    cityJson.getString("temperature"),
-                    cityJson.getString("imageUrl"),
-                    cityJson.getString("cityDescription"),
-                    cityJson.getString("ratCityValue")
-                )
-                Log.d(TAG, "generateContacts: $city")
-                mCity.add(city)
-            }
-
-            cityAdapter.notifyDataSetChanged()
-        } catch (e: JSONException) {
-            e.printStackTrace()
-        }
-    }
+    private const val TAG = "CityListFragment"
 
 
 
-    fun readCityJsonFile(): String? {
-
-        var contactsString: String? = null
-        try {
-            val inputStream: InputStream = contexto.assets.open("mock_city.json")
-            val size = inputStream.available()
-            val buffer = ByteArray(size)
-            inputStream.read(buffer)
-            inputStream.close()
-
-            contactsString = String(buffer)
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-
-        return contactsString
-    }
-
-
-    companion object{
-
-            private const val TAG = "CityListFragment"
-
-
-
-    }
+}
 
 
 }

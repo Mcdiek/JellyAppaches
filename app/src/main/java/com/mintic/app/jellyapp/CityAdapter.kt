@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide
 import java.util.ArrayList
 
 class CityAdapter(
-    private val mCity: ArrayList<City>,
+    private val mCity: List<City>,
     private val context: Context,
     private val onClick: (City) -> Unit
     ) : RecyclerView.Adapter<CityAdapter.CityViewHolder>() {

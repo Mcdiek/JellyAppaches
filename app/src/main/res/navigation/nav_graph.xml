@@ -48,9 +48,21 @@
             android:name="ratingValue"
             app:argType="float"
             android:defaultValue="1" />
+        <argument
+            android:name="geoLat"
+            app:argType="string"
+            android:defaultValue="0" />
+        <argument
+            android:name="geoLon"
+            app:argType="string"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.mintic.app.jellyapp.SettingsFragment"
-        android:label="SettingsFragment" />
+        android:label="SettingsFragment" >
+        <action
+            android:id="@+id/action_settingsFragment_to_fragmentCityList"
+            app:destination="@id/fragmentCityList" />
+    </fragment>
 </navigation>
