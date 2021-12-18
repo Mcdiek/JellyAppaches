@@ -1,24 +1,20 @@
-package com.mintic.app.jellyapp
+package com.mintic.app.jellyapp.presentation.view
 
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentResultOwner
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import org.json.JSONArray
-import org.json.JSONException
-import java.io.IOException
-import java.io.InputStream
-import java.util.ArrayList
+import com.mintic.app.jellyapp.R
+import com.mintic.app.jellyapp.model.City
+import com.mintic.app.jellyapp.presentation.viewmodel.ListViewModel
+import com.mintic.app.jellyapp.presentation.adapter.CityAdapter
 
 
 class CityListFragment : Fragment() {
@@ -38,7 +34,6 @@ class CityListFragment : Fragment() {
 
         viewModel = ViewModelProvider(this).get(ListViewModel::class.java)
         observeLiveData()
-        // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.city_list_fragment, container, false)
 
         recycler = view.findViewById(R.id.city_list)
@@ -56,7 +51,6 @@ class CityListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
     }
 
-    //    agregar contexto
     override fun onAttach(context: Context) {
         super.onAttach(context)
         this.contexto = context
@@ -87,17 +81,16 @@ class CityListFragment : Fragment() {
 
     }
 
-    private fun cityOnClick(city: City,view: View){
-        val action = CityListFragmentDirections
-                    .navigateToCityDetails(city.cityName,
-                                    city.cityDescription,
-                                    city.temperature,
-                                    city.imageUrl,
-                                    city.depName,
-                                    city.ratCityValue.toFloat(),
-                                    city.geoLat,
-                                    city.geoLon
-                                    )
+    private fun cityOnClick(city: City, view: View){
+        val action = CityListFragmentDirections.navigateToCityDetails(city.cityName,
+            city.cityDescription,
+            city.temperature,
+            city.imageUrl,
+            city.depName,
+            city.ratCityValue.toFloat(),
+            city.geoLat,
+            city.geoLon
+        )
         Navigation.findNavController((view)).navigate(action)
     }
 

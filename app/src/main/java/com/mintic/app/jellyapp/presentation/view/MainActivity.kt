@@ -1,4 +1,4 @@
-package com.mintic.app.jellyapp
+package com.mintic.app.jellyapp.presentation.view
 
 
 
@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-
+import com.mintic.app.jellyapp.R
 
 
 class MainActivity : AppCompatActivity() {
@@ -21,9 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
         setSupportActionBar(findViewById(R.id.toolbar))
 
-
        supportActionBar?.title = ""
-
 
     }
 
@@ -35,12 +33,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle item selection
+
         return when (item.itemId) {
             R.id.configure -> {
                 val fragment = SettingsFragment()
                 supportFragmentManager.beginTransaction().apply{
                     replace(R.id.fragmentContainerView,fragment)
+                    addToBackStack(null)
                     commit()
                 }
                 true
@@ -48,11 +47,6 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
-
-
-
-
 
     companion object {
         private const val TAG = "MainActivity"

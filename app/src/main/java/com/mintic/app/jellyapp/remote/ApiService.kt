@@ -1,10 +1,10 @@
-package com.mintic.app.jellyapp
+package com.mintic.app.jellyapp.remote
 
+import com.mintic.app.jellyapp.model.City
 import retrofit2.http.GET
 
 interface ApiService {
     @GET("cities")
 
-    //El suspend se agrega para funcionar en una corutina
     suspend fun requestCity() : List<City>
 }

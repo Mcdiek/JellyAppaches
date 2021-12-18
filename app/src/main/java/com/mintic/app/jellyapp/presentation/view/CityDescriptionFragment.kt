@@ -1,4 +1,4 @@
-package com.mintic.app.jellyapp
+package com.mintic.app.jellyapp.presentation.view
 
 import android.content.Context
 import android.content.Intent
@@ -14,6 +14,7 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
+import com.mintic.app.jellyapp.R
 import kotlin.properties.Delegates
 
 
@@ -35,7 +36,6 @@ class CityDescriptionFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_city_description, container, false)
 
 

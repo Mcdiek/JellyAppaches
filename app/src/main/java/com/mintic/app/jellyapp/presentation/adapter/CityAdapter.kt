@@ -1,4 +1,4 @@
-package com.mintic.app.jellyapp;
+package com.mintic.app.jellyapp.presentation.adapter;
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,7 +9,8 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import java.util.ArrayList
+import com.mintic.app.jellyapp.model.City
+import com.mintic.app.jellyapp.R
 
 class CityAdapter(
     private val mCity: List<City>,
@@ -29,8 +30,6 @@ class CityAdapter(
             holderCity.bind(city = city)
         }
 
-
-        //Retorna la cantidad de elementos mi lista
         override fun getItemCount(): Int
         {
             return mCity.size
@@ -52,7 +51,6 @@ class CityAdapter(
                 }
             }
 
-            /* Bind Contact name and image. */
             fun bind(city: City) {
 
                 currentCity = city

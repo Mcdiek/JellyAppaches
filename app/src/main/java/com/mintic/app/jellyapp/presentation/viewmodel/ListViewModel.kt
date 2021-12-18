@@ -1,9 +1,11 @@
-package com.mintic.app.jellyapp
+package com.mintic.app.jellyapp.presentation.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.mintic.app.jellyapp.model.City
+import com.mintic.app.jellyapp.remote.RetrofitFactory
 import kotlinx.coroutines.launch
 
 class ListViewModel : ViewModel() {
@@ -19,14 +21,6 @@ class ListViewModel : ViewModel() {
     fun getIsFailure(): LiveData<Boolean> = isFailure
 
     fun getCitys(): LiveData<List<City>> = cityList
-
-//    private fun requestCity(){
-//        var list = listOf<City>(
-//            City("Tunja","Boyaca","20","www.google.com","Hola city","5"),
-//            City("Bogota","Cundinamarca","20","www.google.com","Hola city","5")
-//        )
-//        cityList.value = list
-//    }
 
     private fun requestCityFromService(){
         viewModelScope.launch{
