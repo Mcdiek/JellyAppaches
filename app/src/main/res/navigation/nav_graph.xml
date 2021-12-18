@@ -6,7 +6,7 @@
     app:startDestination="@id/fragmentCityList">
     <fragment
         android:id="@+id/fragmentCityList"
-        android:name="com.mintic.app.jellyapp.CityListFragment"
+        android:name="com.mintic.app.jellyapp.presentation.view.CityListFragment"
         android:label="fragment_city_list"
         tools:layout="@layout/city_list_fragment" >
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/cityDescriptionFragment"
-        android:name="com.mintic.app.jellyapp.CityDescriptionFragment"
+        android:name="com.mintic.app.jellyapp.presentation.view.CityDescriptionFragment"
         android:label="CityDescriptionFragment" >
         <argument
             android:name="cityName"
@@ -59,7 +59,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.mintic.app.jellyapp.SettingsFragment"
+        android:name="com.mintic.app.jellyapp.presentation.view.SettingsFragment"
         android:label="SettingsFragment" >
         <action
             android:id="@+id/action_settingsFragment_to_fragmentCityList"

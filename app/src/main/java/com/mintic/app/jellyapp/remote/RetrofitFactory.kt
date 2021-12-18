@@ -1,4 +1,4 @@
-package com.mintic.app.jellyapp
+package com.mintic.app.jellyapp.remote
 
 
 import com.google.gson.Gson
@@ -21,9 +21,6 @@ object RetrofitFactory {
             .build()
     }
 
-//    private fun getRetrofit1() : Retrofit = Retrofit.Builder()
-//            .baseUrl(BASE_URL)
-//            .build()
 
     fun apiService() : ApiService {
         return retrofit().create(ApiService::class.java)
